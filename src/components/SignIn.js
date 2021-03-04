@@ -81,6 +81,12 @@ export default function SignIn({setName}) {
             color="primary"
             className={classes.submit}
             disabled={disabled}
+            onKeyDown = {(e) => {
+              if (e.key === 'Enter') {
+                setName(e.target.value);
+                e.preventDefault();
+              }
+            }}
           >
             はじめる
           </Button>
